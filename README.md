@@ -1,6 +1,187 @@
-# polyq 
+# polyq
 
 Phase-polynomial (path-sum) simulator for Clifford+T circuits in Rust. `cargo test --release` runs 31 tests plus 1 doc-test; every engine is checked against a dense statevector or a brute-force path sum.
+
+## Setup and quick start
+
+### Rust
+
+Install the stable Rust toolchain from [rustup](https://rustup.rs/), then build and test
+the library from the repository root:
+
+```bash
+cargo build --release
+cargo test --release
+```
+
+Run the included benchmark binary:
+
+```bash
+cargo run --release --bin benchmark
+```
+
+Other useful binaries are available with the same pattern:
+
+```bash
+cargo run --release --bin approxbench
+cargo run --release --bin svbench
+cargo run --release --bin profile
+```
+
+The Rust API can be used from another Rust project by adding this repository as a
+dependency, or directly from a small program:
+
+```rust
+use polyq::{Circuit, Simulator};
+
+fn main() {
+    let mut circuit = Circuit::new(2);
+    circuit.h(0).cx(0, 1).t(1);
+
+    let simulator = Simulator::new(&circuit);
+    let amplitude = simulator.amplitude(&[false, false], &[true, true]);
+    println!("{amplitude}");
+}
+```
+
+### Python
+
+Python support is provided through a PyO3 extension built by maturin. Python 3.9 or
+newer and a Rust toolchain are required. From the repository root:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate       # Windows: .venv\Scripts\activate
+python -m pip install --upgrade pip
+python -m pip install maturin numpy
+python -m maturin develop --release
+```
+
+The repository also provides a Makefile for building both libraries and removing
+repository-local build outputs and Python caches:
+
+```bash
+make build
+make clean
+```
+
+If maturin is installed in a virtual environment that is not activated, select
+its interpreter explicitly with `make PYTHON=.venv/bin/python build`.
+
+The optional `stim` dependency is needed only for the Stim conversion benchmark and
+its corresponding tests:
+
+```bash
+python -m pip install pytest stim
+python -m pytest python/test_polyq.py
+```
+
+Example Python usage:
+
+```python
+import polyq
+
+circuit = polyq.Circuit(2)
+circuit.h(0)
+circuit.cx(0, 1)
+circuit.t(1)
+
+simulator = polyq.Simulator(circuit, strategy="auto")
+print(simulator.amplitude(0, 3))       # (real, imaginary)
+print(simulator.probability(0, 3))
+```
+
+The Python module exposes `Circuit`, `Simulator`, `CliffordSampler`, and
+`equivalent`. See [python/test_polyq.py](python/test_polyq.py) for complete examples.
+
+## How the library works
+
+PolyQ is a path-sum simulator. It does not primarily evolve a `2^n`-element
+statevector gate by gate. Instead, it compiles a circuit into a Boolean exponential
+sum, factorizes the reusable quadratic part once, and evaluates amplitudes or
+probabilities from that cached representation.
+
+### Repository structure
+
+| Path | Role |
+|---|---|
+| [src/circuit.rs](src/circuit.rs) | Gate enum, circuit builder, inverse circuits, and CCX/CCZ expansions |
+| [src/pathsum.rs](src/pathsum.rs) | Circuit-to-path-sum compiler and Pauli-fault handling |
+| [src/phase.rs](src/phase.rs) | `Phase`, a `Z_2^32` dyadic phase ring |
+| [src/normal_form.rs](src/normal_form.rs) | Symmetric F2 elimination and closed-form Z4 Gauss sums |
+| [src/engine.rs](src/engine.rs) | Cached normal-form evaluation and affine branch enumeration |
+| [src/rank.rs](src/rank.rs) | Exact pairwise stabilizer decomposition and strategy selection |
+| [src/sim.rs](src/sim.rs) | Strong simulation, statevectors, marginals, sampling, and equivalence |
+| [src/clifford.rs](src/clifford.rs) | Weak sampling from a Clifford affine subspace |
+| [src/incremental.rs](src/incremental.rs) | Streaming compilation and engine reuse |
+| [src/noise.rs](src/noise.rs) | Pauli-noise Monte Carlo using cached structure |
+| [src/dense.rs](src/dense.rs) | Direct statevector reference implementation for tests and comparisons |
+| [src/qasm.rs](src/qasm.rs) | Supported OpenQASM-2-style parser and writer |
+| [src/pybind.rs](src/pybind.rs) | Optional Python bindings |
+
+### The simulation pipeline
+
+For an amplitude `⟨y|C|x⟩`, the compiler in [src/pathsum.rs](src/pathsum.rs)
+creates path variables for the circuit. Hadamards introduce variables; diagonal
+gates add phase terms; `CZ` adds quadratic interactions; `CX` is represented as
+`H-CZ-H`; and `X`/`SWAP` are handled as cheap wire transformations.
+
+The resulting expression has the form:
+
+```text
+⟨y|C|x⟩ =
+2^(-h/2) · e^(iφ)
+· Σ_z i^(Q(z)) · e^(i Σ_k θ_k z_k)
+```
+
+Here `Q(z)` is a Z4 quadratic form:
+
+```text
+Q(z) = Σ_k v_k z_k + 2 Σ_{j<k} B_jk z_j z_k  (mod 4)
+```
+
+`B` is a symmetric binary matrix, `v` contains the Z4 linear coefficients, and
+`theta` contains the remaining non-Clifford rotations.
+
+1. **Compile.** `PathSum::from_circuit` records the quadratic matrix, linear phases,
+   rotation terms, global phase, live variables, and input/output variables.
+2. **Separate fixed and free variables.** Input and output values are boundary
+   variables. Internal path variables remain summed.
+3. **Factorize once.** `Structure::new` in [src/normal_form.rs](src/normal_form.rs)
+   block-diagonalizes the free-variable Gram matrix using word-parallel symmetric
+   elimination. It produces odd one-dimensional blocks, hyperbolic two-dimensional
+   blocks, and radical vectors.
+4. **Evaluate the Clifford part.** The block form turns the exponential sum into
+   independent factors. Their product is a closed-form Gauss sum computed with
+   popcounts and eighth roots of unity; no full enumeration of free variables is
+   needed.
+5. **Reuse boundary assignments.** Changing `x` or `y` changes only a constant phase
+   and a Z-type linear shift. The cached basis is transformed once, so the expensive
+   elimination is not repeated for every amplitude.
+6. **Handle non-Clifford rotations.** Each remaining factor is decomposed as
+   `e^(iθz) = α + β(-1)^z`. The radical coordinates impose a binary linear system,
+   so [src/engine.rs](src/engine.rs) enumerates only the surviving affine subspace
+   of branches. Gray-code updates and Rayon parallelism reduce the per-branch cost.
+7. **Optionally pair T rotations.** [src/rank.rs](src/rank.rs) can replace selected
+   pairs of compatible rotations with two exact stabilizer branches. `strategy="auto"`
+   or `Strategy::Auto` chooses the number of pairs with a cost model.
+
+The main high-level entry point is `Simulator` in [src/sim.rs](src/sim.rs). It
+provides amplitudes, probabilities, full statevectors, marginals, weak sampling,
+and equivalence checking. `statevector` is parallel over output basis states, but
+each output is evaluated through the cached path-sum engine.
+
+### Specialized execution paths
+
+* **Clifford sampling:** [src/clifford.rs](src/clifford.rs) analyzes a Clifford
+  circuit once and samples uniformly from its resulting affine output subspace.
+* **Streaming:** [src/incremental.rs](src/incremental.rs) rebinds the existing
+  structure after diagonal gates, Paulis, `SWAP`, and global phase; gates that
+  change the quadratic graph trigger a rebuild.
+* **Pauli noise:** [src/noise.rs](src/noise.rs) samples fault patterns and reuses
+  the fault-free structure whenever the path-sum structure is unchanged.
+* **Reference simulation:** [src/dense.rs](src/dense.rs) applies gates directly to
+  a statevector and is intended for validation and small circuits.
 
 ## What is new vs `polyq-core` v1
 | Area | v1 | v2 |

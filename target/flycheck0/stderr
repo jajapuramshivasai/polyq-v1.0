@@ -1,1 +1,789 @@
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.14s
+   0.134797584s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="polyq"}: cargo::core::compiler::fingerprint: fingerprint error for polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)/Check { test: false }/TargetInner { ..: lib_target("polyq", ["cdylib", "rlib"], "/Users/shivasai/Desktop/polyq-v1.0/src/lib.rs", Edition2021) }
+   0.134819334s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="polyq"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/polyq-64f1c4f0b5f22c57/lib-polyq`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.169848167s  INFO prepare_target{force=false package_id=num-complex v0.4.6 target="num_complex"}: cargo::core::compiler::fingerprint: fingerprint error for num-complex v0.4.6/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("num_complex", ["lib"], "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num-complex-0.4.6/src/lib.rs", Edition2021) }
+   0.169867709s  INFO prepare_target{force=false package_id=num-complex v0.4.6 target="num_complex"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/num-complex-c041c0750bb6e2d0/lib-num_complex`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::cli::main
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.170337000s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="num_traits"}: cargo::core::compiler::fingerprint: fingerprint error for num-traits v0.2.19/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("num_traits", ["lib"], "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num-traits-0.2.19/src/lib.rs", Edition2021) }
+   0.170343250s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="num_traits"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/num-traits-06dd25aa4822994d/lib-num_traits`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::cli::main
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.170891209s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for num-traits v0.2.19/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num-traits-0.2.19/build.rs", Edition2021) }
+   0.170897125s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/num-traits-6cb59ff15ed01c63/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::custom_build::build_work
+   5: cargo::core::compiler::custom_build::prepare
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::cli::main
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.171071459s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for num-traits v0.2.19/Build/TargetInner { ..: custom_build_target("build-script-build", "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num-traits-0.2.19/build.rs", Edition2021) }
+   0.171076209s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/num-traits-4a7b2f0e77c7a258/build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::cli::main
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.171317250s  INFO prepare_target{force=false package_id=autocfg v1.5.1 target="autocfg"}: cargo::core::compiler::fingerprint: fingerprint error for autocfg v1.5.1/Build/TargetInner { ..: lib_target("autocfg", ["lib"], "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/autocfg-1.5.1/src/lib.rs", Edition2015) }
+   0.171325125s  INFO prepare_target{force=false package_id=autocfg v1.5.1 target="autocfg"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/autocfg-fcdf50f033611558/lib-autocfg`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::cli::main
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.171547917s  INFO prepare_target{force=false package_id=rayon v1.12.0 target="rayon"}: cargo::core::compiler::fingerprint: fingerprint error for rayon v1.12.0/Check { test: false }/TargetInner { ..: lib_target("rayon", ["lib"], "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rayon-1.12.0/src/lib.rs", Edition2021) }
+   0.171552125s  INFO prepare_target{force=false package_id=rayon v1.12.0 target="rayon"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/rayon-7148299285f6f06e/lib-rayon`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::cli::main
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.171811542s  INFO prepare_target{force=false package_id=either v1.19.0 target="either"}: cargo::core::compiler::fingerprint: fingerprint error for either v1.19.0/Check { test: false }/TargetInner { ..: lib_target("either", ["lib"], "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.19.0/src/lib.rs", Edition2021) }
+   0.171817334s  INFO prepare_target{force=false package_id=either v1.19.0 target="either"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/either-0e0c8cc0af7a4985/lib-either`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::cli::main
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.172004209s  INFO prepare_target{force=false package_id=rayon-core v1.13.0 target="rayon_core"}: cargo::core::compiler::fingerprint: fingerprint error for rayon-core v1.13.0/Check { test: false }/TargetInner { ..: lib_target("rayon_core", ["lib"], "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rayon-core-1.13.0/src/lib.rs", Edition2021) }
+   0.172009542s  INFO prepare_target{force=false package_id=rayon-core v1.13.0 target="rayon_core"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/rayon-core-da097d88b07bc65c/lib-rayon_core`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::cli::main
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.172286417s  INFO prepare_target{force=false package_id=crossbeam-deque v0.8.8 target="crossbeam_deque"}: cargo::core::compiler::fingerprint: fingerprint error for crossbeam-deque v0.8.8/Check { test: false }/TargetInner { ..: lib_target("crossbeam_deque", ["lib"], "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-deque-0.8.8/src/lib.rs", Edition2021) }
+   0.172307250s  INFO prepare_target{force=false package_id=crossbeam-deque v0.8.8 target="crossbeam_deque"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/crossbeam-deque-907297c2a4ad78a5/lib-crossbeam_deque`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::cli::main
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.172901459s  INFO prepare_target{force=false package_id=crossbeam-deque v0.8.8 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for crossbeam-deque v0.8.8/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-deque-0.8.8/build.rs", Edition2021) }
+   0.172908959s  INFO prepare_target{force=false package_id=crossbeam-deque v0.8.8 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/crossbeam-deque-3e4c6e4eb6633f81/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::custom_build::build_work
+   5: cargo::core::compiler::custom_build::prepare
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::cli::main
+  18: cargo::main
+  19: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  20: std::rt::lang_start::<()>::{closure#0}
+  21: std::rt::lang_start_internal
+  22: _main
+   0.173096292s  INFO prepare_target{force=false package_id=crossbeam-deque v0.8.8 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for crossbeam-deque v0.8.8/Build/TargetInner { ..: custom_build_target("build-script-build", "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-deque-0.8.8/build.rs", Edition2021) }
+   0.173100709s  INFO prepare_target{force=false package_id=crossbeam-deque v0.8.8 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/crossbeam-deque-c4bc1645635ac348/build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::cli::main
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.173310167s  INFO prepare_target{force=false package_id=crossbeam-epoch v0.9.21 target="crossbeam_epoch"}: cargo::core::compiler::fingerprint: fingerprint error for crossbeam-epoch v0.9.21/Check { test: false }/TargetInner { ..: lib_target("crossbeam_epoch", ["lib"], "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-epoch-0.9.21/src/lib.rs", Edition2021) }
+   0.173315875s  INFO prepare_target{force=false package_id=crossbeam-epoch v0.9.21 target="crossbeam_epoch"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/crossbeam-epoch-cd24ce32a8866961/lib-crossbeam_epoch`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::cli::main
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.173965709s  INFO prepare_target{force=false package_id=crossbeam-epoch v0.9.21 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for crossbeam-epoch v0.9.21/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-epoch-0.9.21/build.rs", Edition2021) }
+   0.173970959s  INFO prepare_target{force=false package_id=crossbeam-epoch v0.9.21 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/crossbeam-epoch-1e9d4ca3df5eca11/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::custom_build::build_work
+   5: cargo::core::compiler::custom_build::prepare
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: cargo::core::compiler::compile
+  12: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  13: cargo::ops::cargo_compile::compile_ws
+  14: cargo::ops::cargo_compile::compile_with_exec
+  15: cargo::ops::cargo_compile::compile
+  16: cargo::commands::check::exec
+  17: <cargo::cli::Exec>::exec
+  18: cargo::cli::main
+  19: cargo::main
+  20: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  21: std::rt::lang_start::<()>::{closure#0}
+  22: std::rt::lang_start_internal
+  23: _main
+   0.174167125s  INFO prepare_target{force=false package_id=crossbeam-epoch v0.9.21 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for crossbeam-epoch v0.9.21/Build/TargetInner { ..: custom_build_target("build-script-build", "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-epoch-0.9.21/build.rs", Edition2021) }
+   0.174172000s  INFO prepare_target{force=false package_id=crossbeam-epoch v0.9.21 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/crossbeam-epoch-24731b6271372740/build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::cli::main
+  18: cargo::main
+  19: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  20: std::rt::lang_start::<()>::{closure#0}
+  21: std::rt::lang_start_internal
+  22: _main
+   0.174413709s  INFO prepare_target{force=false package_id=crossbeam-utils v0.8.23 target="crossbeam_utils"}: cargo::core::compiler::fingerprint: fingerprint error for crossbeam-utils v0.8.23/Check { test: false }/TargetInner { ..: lib_target("crossbeam_utils", ["lib"], "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.23/src/lib.rs", Edition2021) }
+   0.174418750s  INFO prepare_target{force=false package_id=crossbeam-utils v0.8.23 target="crossbeam_utils"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/crossbeam-utils-7f1e2744be34385d/lib-crossbeam_utils`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::cli::main
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.175013209s  INFO prepare_target{force=false package_id=crossbeam-utils v0.8.23 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for crossbeam-utils v0.8.23/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.23/build.rs", Edition2021) }
+   0.175018334s  INFO prepare_target{force=false package_id=crossbeam-utils v0.8.23 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/crossbeam-utils-8f0c24005020aa64/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::custom_build::build_work
+   5: cargo::core::compiler::custom_build::prepare
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: cargo::core::compiler::compile
+  12: cargo::core::compiler::compile
+  13: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  14: cargo::ops::cargo_compile::compile_ws
+  15: cargo::ops::cargo_compile::compile_with_exec
+  16: cargo::ops::cargo_compile::compile
+  17: cargo::commands::check::exec
+  18: <cargo::cli::Exec>::exec
+  19: cargo::cli::main
+  20: cargo::main
+  21: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  22: std::rt::lang_start::<()>::{closure#0}
+  23: std::rt::lang_start_internal
+  24: _main
+   0.175198417s  INFO prepare_target{force=false package_id=crossbeam-utils v0.8.23 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for crossbeam-utils v0.8.23/Build/TargetInner { ..: custom_build_target("build-script-build", "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.23/build.rs", Edition2021) }
+   0.175202792s  INFO prepare_target{force=false package_id=crossbeam-utils v0.8.23 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/crossbeam-utils-7577b7aa44381f90/build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: cargo::core::compiler::compile
+  12: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  13: cargo::ops::cargo_compile::compile_ws
+  14: cargo::ops::cargo_compile::compile_with_exec
+  15: cargo::ops::cargo_compile::compile
+  16: cargo::commands::check::exec
+  17: <cargo::cli::Exec>::exec
+  18: cargo::cli::main
+  19: cargo::main
+  20: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  21: std::rt::lang_start::<()>::{closure#0}
+  22: std::rt::lang_start_internal
+  23: _main
+   0.175788334s  INFO prepare_target{force=false package_id=rayon-core v1.13.0 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for rayon-core v1.13.0/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rayon-core-1.13.0/build.rs", Edition2021) }
+   0.175793167s  INFO prepare_target{force=false package_id=rayon-core v1.13.0 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/rayon-core-20be5eedf8382f57/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::custom_build::build_work
+   5: cargo::core::compiler::custom_build::prepare
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::cli::main
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.176002750s  INFO prepare_target{force=false package_id=rayon-core v1.13.0 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for rayon-core v1.13.0/Build/TargetInner { ..: custom_build_target("build-script-build", "/Users/shivasai/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rayon-core-1.13.0/build.rs", Edition2021) }
+   0.176007792s  INFO prepare_target{force=false package_id=rayon-core v1.13.0 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/rayon-core-ba4ee319199a1cc6/build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::cli::main
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.176266000s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="polyq"}: cargo::core::compiler::fingerprint: fingerprint error for polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)/Check { test: true }/TargetInner { ..: lib_target("polyq", ["cdylib", "rlib"], "/Users/shivasai/Desktop/polyq-v1.0/src/lib.rs", Edition2021) }
+   0.176272459s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="polyq"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/polyq-71c384d9aa6cd472/test-lib-polyq`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.176590459s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="approxbench"}: cargo::core::compiler::fingerprint: fingerprint error for polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)/Check { test: false }/TargetInner { name: "approxbench", doc: true, ..: with_path("/Users/shivasai/Desktop/polyq-v1.0/src/bin/approxbench.rs", Edition2021) }
+   0.176596875s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="approxbench"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/polyq-6029cef4139434cc/bin-approxbench`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.176946042s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="approxbench"}: cargo::core::compiler::fingerprint: fingerprint error for polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)/Check { test: true }/TargetInner { name: "approxbench", doc: true, ..: with_path("/Users/shivasai/Desktop/polyq-v1.0/src/bin/approxbench.rs", Edition2021) }
+   0.176951542s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="approxbench"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/polyq-df311fefd6de7054/test-bin-approxbench`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.177293917s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="benchmark"}: cargo::core::compiler::fingerprint: fingerprint error for polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)/Check { test: false }/TargetInner { name: "benchmark", doc: true, ..: with_path("/Users/shivasai/Desktop/polyq-v1.0/src/bin/benchmark.rs", Edition2021) }
+   0.177299167s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="benchmark"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/polyq-427e2140d9dfc885/bin-benchmark`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.177675750s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="benchmark"}: cargo::core::compiler::fingerprint: fingerprint error for polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)/Check { test: true }/TargetInner { name: "benchmark", doc: true, ..: with_path("/Users/shivasai/Desktop/polyq-v1.0/src/bin/benchmark.rs", Edition2021) }
+   0.177681667s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="benchmark"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/polyq-1b07405c4a1ee54b/test-bin-benchmark`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.178056292s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="profile"}: cargo::core::compiler::fingerprint: fingerprint error for polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)/Check { test: false }/TargetInner { name: "profile", doc: true, ..: with_path("/Users/shivasai/Desktop/polyq-v1.0/src/bin/profile.rs", Edition2021) }
+   0.178064584s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="profile"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/polyq-80f8853ceaa97e09/bin-profile`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.178426792s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="profile"}: cargo::core::compiler::fingerprint: fingerprint error for polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)/Check { test: true }/TargetInner { name: "profile", doc: true, ..: with_path("/Users/shivasai/Desktop/polyq-v1.0/src/bin/profile.rs", Edition2021) }
+   0.178431792s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="profile"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/polyq-9ac4eba56c1070f6/test-bin-profile`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.178782917s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="svbench"}: cargo::core::compiler::fingerprint: fingerprint error for polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)/Check { test: false }/TargetInner { name: "svbench", doc: true, ..: with_path("/Users/shivasai/Desktop/polyq-v1.0/src/bin/svbench.rs", Edition2021) }
+   0.178788250s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="svbench"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/polyq-6791efec8cb2191b/bin-svbench`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.179106209s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="svbench"}: cargo::core::compiler::fingerprint: fingerprint error for polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)/Check { test: true }/TargetInner { name: "svbench", doc: true, ..: with_path("/Users/shivasai/Desktop/polyq-v1.0/src/bin/svbench.rs", Edition2021) }
+   0.179110917s  INFO prepare_target{force=false package_id=polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0) target="svbench"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/shivasai/Desktop/polyq-v1.0/target/debug/.fingerprint/polyq-0d1ab311662b02c5/test-bin-svbench`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   Compiling crossbeam-utils v0.8.23
+   Compiling crossbeam-epoch v0.9.21
+   Compiling crossbeam-deque v0.8.8
+   Compiling autocfg v1.5.1
+   Compiling rayon-core v1.13.0
+    Checking either v1.19.0
+   Compiling num-traits v0.2.19
+    Checking rayon v1.12.0
+    Checking num-complex v0.4.6
+    Checking polyq v2.0.0 (/Users/shivasai/Desktop/polyq-v1.0)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 5.65s
