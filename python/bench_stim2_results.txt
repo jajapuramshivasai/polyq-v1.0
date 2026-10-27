@@ -1,0 +1,14 @@
+circuit                               d  stimQ    pqQ  gates |  stim 1st  stim 100k stim packed | pq analyse   pq 100k | ok
+surface_code:rotated_memory_z         3     26     59    153 |    0.07ms     25.5ms       9.3ms |      0.3ms    17.4ms | True
+surface_code:rotated_memory_z         5     64    209    785 |    0.07ms    123.0ms      42.8ms |      1.8ms    61.5ms | True
+surface_code:rotated_memory_z         7    118    503   2233 |    0.16ms    422.1ms     104.8ms |      8.5ms   199.8ms | True
+surface_code:rotated_memory_z         9    188    989   4833 |    0.56ms   1045.4ms     255.7ms |     38.2ms   383.6ms | True
+surface_code:rotated_memory_z        11    274   1715   8921 |    0.67ms   1700.0ms     477.5ms |    167.6ms   553.8ms | True
+surface_code:unrotated_memory_z       3     25     74    241 |    0.04ms     15.1ms      13.0ms |      0.5ms    20.6ms | True
+surface_code:unrotated_memory_z       5     81    322   1361 |    0.11ms    238.2ms      74.5ms |      6.5ms    80.5ms | True
+surface_code:unrotated_memory_z       7    169    842   4033 |    0.35ms    783.3ms     174.3ms |     26.1ms   260.0ms | True
+surface_code:unrotated_memory_z       9    289   1730   8929 |    0.67ms   1730.6ms     414.5ms |    169.1ms   622.3ms | True
+repetition_code:memory                3      5     14     27 |    0.02ms      3.0ms       3.5ms |      0.1ms     3.1ms | True
+repetition_code:memory               11     21    142    451 |    0.03ms     78.1ms      50.1ms |      1.5ms    18.4ms | True
+repetition_code:memory               31     61   1022   3751 |    0.15ms   1044.0ms     255.7ms |     44.3ms   173.4ms | True
+repetition_code:memory               61    121   3842  14701 |    0.69ms   4165.0ms    1173.4ms |    831.3ms   631.8ms | True

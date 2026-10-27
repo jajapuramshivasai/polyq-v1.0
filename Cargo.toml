@@ -1,0 +1,23 @@
+[package]
+name = "polyq"
+version = "2.0.0"
+edition = "2021"
+description = "Phase-polynomial (path-sum) simulator for Clifford+T circuits with cached Dumas-Pernet normal forms"
+license = "MIT"
+
+[lib]
+name = "polyq"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+python = ["dep:pyo3"]
+
+[dependencies]
+pyo3 = { version = "0.25", features = ["extension-module", "abi3-py39"], optional = true }
+num-complex = "0.4"
+rayon = "1.8"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
